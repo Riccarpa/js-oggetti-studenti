@@ -12,3 +12,28 @@ Facciamo un passo alla volta e verifichiamo i nostri passi col console.log.
 Quando tutto funziona col console.log possiamo preoccuparci di eseguire in pagina!
 
 */
+
+// link to html 
+
+var studentCard = document.getElementById('student-card')
+
+//ES.1  *********************************************************************************************
+
+// Creo un oggetto studente
+const student = {
+    Name: 'Riccardo',
+    Surname: 'Pagni',
+    Age: 22
+};
+
+// stampare in doc tutte le proprietà con un ciclo
+let studentData = '';
+
+for (key in student) {
+    studentData += '<span class = "block">' + key + ': ' + student[key] + '</span>';
+
+}
+
+studentCard.innerHTML = studentData;
+
+//ES.2  *********************************************************************************************
