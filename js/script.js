@@ -71,8 +71,8 @@ studentsSection.innerHTML = currentStudentData;
 //nell’ ordine: nome, cognome e età.
 
 button.addEventListener('click', function() {
-
     const newStudent = {};
+
 
     newStudent.Name = prompt('inserisci il tuo nome');
     newStudent.Surname = prompt('inserisci il tuo cognome');
@@ -85,8 +85,12 @@ button.addEventListener('click', function() {
             key + ': ' + newStudent[key] + '</span>';
 
     }
+
     studentsSection.innerHTML = currentStudentData + '<hr>' + '<h2>New Student</h2>' + NewStudentData;
 
+    studentsList.push(newStudent);
+    console.log(studentsList);
 
     button.classList.add('hidden');
+
 })
