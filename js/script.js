@@ -8,6 +8,7 @@ Stampare a schermo (in pagina) attraverso un ciclo for-in tutte le proprietà de
 
 var studentCard = document.getElementById('student-card');
 var studentsSection = document.getElementById('students-list');
+var button = document.getElementById('button');
 
 //ES.1  *********************************************************************************************
 
@@ -64,21 +65,28 @@ for (i = 0; i < studentsList.length; i++) {
 
 
 }
+studentsSection.innerHTML = currentStudentData;
 
 //Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente inserendo 
 //nell’ ordine: nome, cognome e età.
 
-const newStudent = {};
+button.addEventListener('click', function() {
 
-newStudent.Name = prompt('inserisci il tuo nome');
-newStudent.Surname = prompt('inserisci il tuo cognome');
-newStudent.Age = prompt('inserisci la tua età');
+    const newStudent = {};
 
-let NewStudentData = '';
+    newStudent.Name = prompt('inserisci il tuo nome');
+    newStudent.Surname = prompt('inserisci il tuo cognome');
+    newStudent.Age = prompt('inserisci la tua età');
 
-for (var key in newStudent) {
-    NewStudentData += '<span class = "block">' +
-        key + ': ' + newStudent[key] + '</span>';
+    let NewStudentData = '';
 
-}
-studentsSection.innerHTML = currentStudentData + '<hr>' + '<h2>New Student</h2>' + NewStudentData;
+    for (var key in newStudent) {
+        NewStudentData += '<span class = "block">' +
+            key + ': ' + newStudent[key] + '</span>';
+
+    }
+    studentsSection.innerHTML = currentStudentData + '<hr>' + '<h2>New Student</h2>' + NewStudentData;
+
+
+    button.classList.add('hidden');
+})
